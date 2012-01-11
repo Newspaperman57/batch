@@ -17,7 +17,7 @@ echo hello %name%
 Goto start
 :Start
 echo .
-echo WELCOME to simple Dance Test!
+echo WELCOME to simple DERP Test!
 ping 1.1.1.1 -n 2 -w 600 > ping.log
 cls
 Echo.
