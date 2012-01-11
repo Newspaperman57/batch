@@ -26,26 +26,12 @@ echo choose now.....
 echo %door%
 choice /c:123 /n /m "door:"
 
-IF ERRORLEVEL == %door% goto win 
 IF NOT ERRORLEVEL == %door% goto lose
+IF ERRORLEVEL == %door% goto win 
 
-
-:door1
-echo door 1
-pause
-goto end
-:door2
-echo door 2
-pause
-goto end
-:door3
-echo door 3
-pause
-goto end
-
-
-
-
+::IF ERRORLEVEL %door% && 1 call door1.bat
+::IF ERRORLEVEL %door% && 2 call door2.bat
+::IF ERRORLEVEL %door% && 3 call door3.bat
 
 :gen
 Setlocal EnableDelayedExpansion
