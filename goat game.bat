@@ -19,13 +19,11 @@ ping 1.1.1.1.1 -n 1 -w 1000 >nul
 echo door 3
 ping 1.1.1.1.1 -n 1 -w 10000 >nul
 echo choose now.....
-choice /C:123 /N "wich door 1 2 3" 
-
-
-
-IF ERRORLEVEL 1 goto door1
+choice /c:123 /n /m "door:"
+IF ERRORLEVEL 3 goto door3 
 IF ERRORLEVEL 2 goto door2
-IF ERRORLEVEL 3 goto door3
+IF ERRORLEVEL 1 goto door1
+
 :door1
 echo door 1
 pause
