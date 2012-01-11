@@ -43,16 +43,19 @@ cls
 Echo.
 echo The test will begin in 0 seconds
 cls
+set count=-1
 :"fast test"
 goto Game
 :Game
+set count+=1
 goto Random_letter
 :game2
 Echo. 
+echo Points: %count%
 echo Press %rndl%
-Choice /n /c:abcdefghijklmnopqrstuvwxyzæøå
-cls
-if %rndl% == %answer% goto Game
+Choice /n /c:abcdefghijklmnopqrstuvwxyzæø0
+call numbertoletter.bat
+if %answer%==%rndl% goto game
 Goto end
 Ping 1.1.1.1 -n 2 -w 200 > Ping.log
 
@@ -60,7 +63,7 @@ Ping 1.1.1.1 -n 2 -w 200 > Ping.log
 :Random_letter
 Setlocal EnableDelayedExpansion
 Set _RNDLength=1
-Set _Alphanumeric=abcdefghijklmnopqrstuvwxyzæøå
+Set _Alphanumeric=ABCDEFGHIJKLMNOPQRSTUVXYZ
 Set _Str=%_Alphanumeric%987654321
 :_LenLoop
 IF NOT "%_Str:~18%"=="" SET _Str=%_Str:~9%& SET /A _Len+=9& GOTO :_LenLoop
