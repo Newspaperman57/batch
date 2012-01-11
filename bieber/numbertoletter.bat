@@ -20,6 +20,10 @@ if %errorlevel%==19 set answer=S
 if %errorlevel%==20 set answer=T
 if %errorlevel%==21 set answer=U
 if %errorlevel%==22 set answer=V
-if %errorlevel%==23 set answer=X
-if %errorlevel%==24 set answer=Y
-if %errorlevel%==25 set answer=Z
+if %errorlevel%==23 set answer=W
+if %errorlevel%==24 set answer=X
+if %errorlevel%==25 set answer=Y
+if %errorlevel%==26 set answer=Z
+if %errorlevel%==27 set answer=Æ
+if %errorlevel%==28 set answer=Ø
+if %errorlevel%==29 set answer=Å

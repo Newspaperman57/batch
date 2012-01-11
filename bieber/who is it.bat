@@ -43,17 +43,17 @@ cls
 Echo.
 echo The test will begin in 0 seconds
 cls
-set count=-1
 :"fast test"
+set count=-1
 goto Game
 :Game
-set count+=1
+set count=count+1
 goto Random_letter
 :game2
 Echo. 
 echo Points: %count%
 echo Press %rndl%
-Choice /n /c:abcdefghijklmnopqrstuvwxyzæø0
+Choice /n /c:abcdefghijklmnopqrstuvwxyzæøå
 call numbertoletter.bat
 if %answer%==%rndl% goto game
 Goto end

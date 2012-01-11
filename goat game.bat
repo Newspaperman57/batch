@@ -27,7 +27,7 @@ echo %door%
 choice /c:123 /n /m "door:"
 
 IF ERRORLEVEL == %door% goto win 
-else goto lose
+IF NOT ERRORLEVEL == %door% goto lose
 
 
 :door1
@@ -43,19 +43,8 @@ echo door 3
 pause
 goto end
 
-:end
-exit
-
-:win
-echo you win!
-ping 1.1.1.1.1 -n 1 -w 500000 >nul
-pause
 
 
-:lose
-echo you DERP!
-ping 1.1.1.1.1 -n 1 -w 500000 >nul
-pause
 
 
 :gen
@@ -78,6 +67,17 @@ If !_count! lss %_RNDLength% goto _loop
 goto choice
 
 
+:end
+exit
 
 
-IF NOT ERRORLEVEL == %door% goto lose
+:win
+echo you win!
+ping 1.1.1.1.1 -n 1 -w 500000 >nul
+pause
+
+
+:lose
+echo you DERP!
+ping 1.1.1.1.1 -n 1 -w 500000 >nul
+pause
