@@ -23,4 +23,3 @@ if %errorlevel%==22 set answer=V
 if %errorlevel%==23 set answer=X
 if %errorlevel%==24 set answer=Y
 if %errorlevel%==25 set answer=Z
-if %errorlevel%==29 set answer=
