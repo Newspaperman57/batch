@@ -26,8 +26,9 @@ echo choose now.....
 echo %door%
 choice /c:123 /n /m "door:"
 
-IF ERRORLEVEL == %door% goto win 
 IF NOT ERRORLEVEL == %door% goto lose
+IF ERRORLEVEL == %door% goto win 
+
 
 
 :door1
@@ -75,9 +76,16 @@ exit
 echo you win!
 ping 1.1.1.1.1 -n 1 -w 500000 >nul
 pause
+goto end
 
 
 :lose
 echo you DERP!
 ping 1.1.1.1.1 -n 1 -w 500000 >nul
 pause
+goto derp
+
+:derp
+echo test test test
+pause
+
