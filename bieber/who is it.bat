@@ -1,5 +1,7 @@
 echo off
 cls
+goto "fast test"
+cls
 goto Begin
 :Begin
 echo.
@@ -16,45 +18,49 @@ Goto start
 :Start
 echo .
 echo WELCOME to simple Dance Test!
-ping 1.1.1.1 -n 2 -w 300
+ping 1.1.1.1 -n 2 -w 600 > ping.log
 cls
 Echo.
 echo The test will begin in 5 seconds
-ping 1.1.1.1 -n 2 -w 100
+ping 1.1.1.1 -n 2 -w 100 > ping.log
 cls
 Echo.
 echo The test will begin in 4 seconds
-ping 1.1.1.1 -n 2 -w 100
+ping 1.1.1.1 -n 2 -w 100 > ping.log
 cls
 Echo.
 echo The test will begin in 3 seconds
-ping 1.1.1.1 -n 2 -w 100
+ping 1.1.1.1 -n 2 -w 100 > ping.log
 cls
 Echo.
 echo The test will begin in 2 seconds
-ping 1.1.1.1 -n 2 -w 100
+ping 1.1.1.1 -n 2 -w 100 > ping.log
 cls
 Echo.
 echo The test will begin in 1 seconds
-ping 1.1.1.1 -n 2 -w 100
+ping 1.1.1.1 -n 2 -w 100 > ping.log
 cls
 Echo.
 echo The test will begin in 0 seconds
 cls
+:"fast test"
 goto Game
 :Game
 goto Random_letter
-:game 2
+:game2
 Echo. 
-echo Press !_RndAlphaNum!
-if !_RndAlphaNum!=> goto game
+echo Press %rndl%
+Choice /n /c:abcdefghijklmnopqrstuvwxyzæøå
+cls
+if %rndl% == %answer% goto Game
+Goto end
 Ping 1.1.1.1 -n 2 -w 200 > Ping.log
 
 
 :Random_letter
 Setlocal EnableDelayedExpansion
 Set _RNDLength=1
-Set _Alphanumeric=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+Set _Alphanumeric=abcdefghijklmnopqrstuvwxyzæøå
 Set _Str=%_Alphanumeric%987654321
 :_LenLoop
 IF NOT "%_Str:~18%"=="" SET _Str=%_Str:~9%& SET /A _Len+=9& GOTO :_LenLoop
@@ -68,6 +74,11 @@ SET _RND=%Random%
 Set /A _RND=_RND%%%_Len%
 SET _RndAlphaNum=!_RndAlphaNum!!_Alphanumeric:~%_RND%,1!
 If !_count! lss %_RNDLength% goto _loop
-Echo Random string is !_RndAlphaNum!
+set rndl=!_RndAlphaNum!
 Goto Game2
 pause
+:end
+echo.
+echo GAME OVER
+echo.
+Pause
