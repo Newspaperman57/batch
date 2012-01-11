@@ -75,9 +75,11 @@ exit
 echo you win!
 ping 1.1.1.1.1 -n 1 -w 500000 >nul
 pause
+goto end
 
 
 :lose
 echo you DERP!
 ping 1.1.1.1.1 -n 1 -w 500000 >nul
 pause
+goto end
