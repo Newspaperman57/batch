@@ -95,7 +95,7 @@ Goto Game2
 
 :end
 if %points% gtr 1 set Pointtxt=Points
-if %points% equ 1 set Pointtxt=Point
+if %points% lss 2 set Pointtxt=Point
 echo.
 echo GAME OVER
 echo.
@@ -126,5 +126,5 @@ cls
 type highscore.txt
 pause
 ping 1.1.1.1 -n 1 >ping.log
-goto rafnas
+goto menu
 
