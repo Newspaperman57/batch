@@ -26,37 +26,12 @@ echo choose now.....
 echo %door%
 choice /c:123 /n /m "door:"
 
+IF NOT ERRORLEVEL == %door% goto lose
 IF ERRORLEVEL == %door% goto win 
-else goto lose
 
-
-:door1
-echo door 1
-pause
-goto end
-:door2
-echo door 2
-pause
-goto end
-:door3
-echo door 3
-pause
-goto end
-
-:end
-exit
-
-:win
-echo you win!
-ping 1.1.1.1.1 -n 1 -w 500000 >nul
-pause
-
-
-:lose
-echo you DERP!
-ping 1.1.1.1.1 -n 1 -w 500000 >nul
-pause
-
+::IF ERRORLEVEL %door% && 1 call door1.bat
+::IF ERRORLEVEL %door% && 2 call door2.bat
+::IF ERRORLEVEL %door% && 3 call door3.bat
 
 :gen
 Setlocal EnableDelayedExpansion
@@ -78,6 +53,19 @@ If !_count! lss %_RNDLength% goto _loop
 goto choice
 
 
+:end
+exit
 
 
-IF NOT ERRORLEVEL == %door% goto lose
+:win
+echo you win!
+ping 1.1.1.1.1 -n 1 -w 500000 >nul
+pause
+goto end
+
+
+:lose
+echo you DERP!
+ping 1.1.1.1.1 -n 1 -w 500000 >nul
+pause
+goto end
