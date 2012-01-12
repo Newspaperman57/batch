@@ -70,8 +70,12 @@ cls
 Echo. 
 echo Points: %points%
 echo Press %rndl%
+<<<<<<< HEAD
 pause
 Choice ty,%time% /n /c:ABCDEFGHIJKLMNOPQRSTUVXYZ
+=======
+Choice /n /c:abcdefghijklmnopqrstuvxyz
+>>>>>>> 69ecc88e83f7ed7e35e7eac03fd2db0be9434d05
 call numbertoletter.bat
 if %answer%==%rndl% goto game
 Goto end
@@ -131,5 +135,5 @@ cls
 type highscore.txt
 pause
 ping 1.1.1.1 -n 1 >ping.log
-goto djagf
+goto menu
 
