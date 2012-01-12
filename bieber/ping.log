@@ -1,7 +1,7 @@
 
 Pinger 1.1.1.1 med 32 byte data:
 Svar fra 62.242.144.25: Modtagernet ikke tilg‘ngeligt.
-Anmodning fik timeout.
+Svar fra 62.242.144.25: Modtagernet ikke tilg‘ngeligt.
 
 Ping-statistikker for 1.1.1.1:
-    Pakker: Sendt = 2, modtaget = 1, tabt = 1 (50% tab),
+    Pakker: Sendt = 2, modtaget = 2, tabt = 0 (0% tab),

@@ -66,7 +66,7 @@ cls
 Echo. 
 echo Points: %points%
 echo Press %rndl%
-Choice /n /c:abcdefghijklmnopqrstuvxyz
+Choice /n /c:ABCDEFGHIJKLMNOPQRSTUVXYZ
 call numbertoletter.bat
 if %answer%==%rndl% goto game
 Goto end
@@ -95,7 +95,7 @@ Goto Game2
 
 :end
 if %points% gtr 1 set Pointtxt=Points
-if %points% equ 1 set Pointtxt=Point
+if %points% lss 2 set Pointtxt=Point
 echo.
 echo GAME OVER
 echo.
