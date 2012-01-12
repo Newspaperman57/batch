@@ -26,12 +26,12 @@ echo choose now.....
 echo %door%
 choice /c:123 /n /m "door:"
 
-IF NOT ERRORLEVEL == %door% goto lose
-IF ERRORLEVEL == %door% goto win 
+::IF NOT ERRORLEVEL == %door% goto lose
+::IF ERRORLEVEL == %door% goto win 
 
-::IF ERRORLEVEL %door% && 1 call door1.bat
-::IF ERRORLEVEL %door% && 2 call door2.bat
-::IF ERRORLEVEL %door% && 3 call door3.bat
+IF ERRORLEVEL %door% && 1 call door1.bat
+IF ERRORLEVEL %door% && 2 call door2.bat
+IF ERRORLEVEL %door% && 3 call door3.bat
 
 echo door: %door%
 echo nuldoor: %nuldoor%
