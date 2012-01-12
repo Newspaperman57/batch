@@ -33,6 +33,9 @@ IF ERRORLEVEL == %door% goto win
 ::IF ERRORLEVEL %door% && 2 call door2.bat
 ::IF ERRORLEVEL %door% && 3 call door3.bat
 
+echo door: %door%
+echo nuldoor: %nuldoor%
+
 :gen
 Setlocal EnableDelayedExpansion
 Set _RNDLength=1
