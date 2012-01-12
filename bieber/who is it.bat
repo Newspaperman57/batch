@@ -126,5 +126,5 @@ cls
 type highscore.txt
 pause
 ping 1.1.1.1 -n 1 >ping.log
-goto menu
+goto djagf
 
