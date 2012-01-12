@@ -76,7 +76,7 @@ Ping 1.1.1.1 -n 2 -w 200 % Ping.log
 :Random_letter
 Setlocal EnableDelayedExpansion
 Set _RNDLength=1
-Set _Alphanumeric=ABCDEFGHIJKLMNOPQRSTUVXYZ
+Set _Alphanumeric=abcdefghijklmnopqrstuvxyz
 Set _Str=%_Alphanumeric%987654321
 :_LenLoop
 IF NOT "%_Str:~18%"=="" SET _Str=%_Str:~9%& SET /A _Len+=9& GOTO :_LenLoop

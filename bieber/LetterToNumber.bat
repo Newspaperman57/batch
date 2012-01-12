@@ -1,5 +1,5 @@
-if %letter%==A set answer=1
-if %letter%==B set answer=2
+if %letter%==a set answer=1
+if %letter%==b set answer=2
 if %letter%==c set answer=3
 if %letter%==d set answer=4
 if %letter%==e set answer=5
